@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
+import { FormsModule } from '@angular/forms';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/header/nav/nav.component';
@@ -10,6 +14,8 @@ import { ContentComponent } from './components/main/content/content.component';
 import { ContactComponent } from './components/footer/contact/contact.component';
 import { ConsultaComponent } from './components/consulta/consulta.component';
 import { ngModuleJitUrl } from '@angular/compiler';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ɵNgClassImpl } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,14 @@ import { ngModuleJitUrl } from '@angular/compiler';
     NavComponent,
     ContentComponent,
     ContactComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [

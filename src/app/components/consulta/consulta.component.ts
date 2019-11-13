@@ -15,18 +15,12 @@ export class ConsultaComponent implements OnInit {
 
   constructor(private http: HttpClient, 
               private contentService: ContentService) {
-    // this.http.get('https://restcountries.eu/rest/v2/all').subscribe(data => {
-      // console.log( data );
-    //   this.paises = data;
-    //   console.log(this.paises);
-    // });
-
-    this.contentService.mostrar((data: any) => {
-    console.log(data)
-    })
-
-
-   }
+    
+                this.contentService.mostrar().subscribe(resp =>{
+this.paises = resp;
+console.log(this.paises)
+                })
+              }
 
   ngOnInit() {
   }

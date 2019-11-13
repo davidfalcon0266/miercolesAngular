@@ -1,3 +1,6 @@
+<app-nav>
+</app-nav>
+
 <section class="principal">
     <div class="fondo-img-principal"></div>
     <div class="titulo">
@@ -18,35 +21,39 @@
         </div>
 
 
-        <form class="formulario-btn" id="formulario">
+        <form class="formulario-btn" (ngSubmit)="verificar(for)" #for="ngForm">
             <div class="parrafo1">
                 <div id="mensaje"></div>
                 <p class="parrafo"> Usa tus Millas LATAM Pass </p>
             </div>
             <div class="form-flex">
                 <div class="inputs">
-                    <input class="seudo" type="text" id="ciudad" placeholder="Ciudad o aereopuerto">
+                    <input class="seudo" type="text" [(ngModel)]="usuarios.ciudad" required minlength="2" id="ciudad" name="ciudad" placeholder="Ciudad o aereopuerto">
 
                     <div class="radios">
                         <input type="radio"> Ida y vuelta
                         <input class="radio" type="radio"> Solo ida
                     </div>
 
-                    <input class="seudo fecha" type="fecha" id="fecha" placeholder="05/11/2019">
-                    <input class="seudo" type="text" id="niño" placeholder="1 Adulto, 0 Niños, 0 Bebes">
-                    <input class="seudo" type="text" id="codigo" placeholder="CODIGO PROMOCIONAL">
+                    <input class="seudo fecha" type="fecha" [(ngModel)]="usuarios.fecha" required minlength="2" name="fecha" id="fecha" placeholder="05/11/2019">
+
+                    <input class="seudo" type="text" [(ngModel)]="usuarios.personas" id="niño" required name="personas" placeholder="1 Adulto, 0 Niños, 0 Bebes">
+
+                    <input class="seudo" type="text" [(ngModel)]="usuarios.codigo" required minlength="2" id="codigo" name="codigo" placeholder="CODIGO PROMOCIONAL">
 
                 </div>
 
                 <div class="derecha">
-                    <input class="seudo" type="text" id="ciudad2" placeholder="Ciudad o Aereopuerto">
+                    <input class="seudo" type="text" [(ngModel)]="usuarios.aereopuerto" required minlength="5" name="aereopuerto" id="aereopuerto" placeholder="Ciudad o Aereopuerto">
                     <br>
                     <br>
                     <br>
 
-                    <input class="seudo segunda" type="text" id="fecha2" placeholder="Fecha">
-                    <input class="seudo" type="text" id="economy" placeholder="Ecomomy">
-                    <input class="seudo" type="text" id="viaja" placeholder="Viaja con nosotros">
+                    <input class="seudo segunda" [(ngModel)]="usuarios.email" type="email" name="email" id="fecha2" placeholder="Email">
+
+                    <input class="seudo" [(ngModel)]="usuarios.nombre" type="text" id="economy" required minlength="4" name="nombre" placeholder="Nombre">
+
+                    <input class="seudo" type="text" [(ngModel)]="usuarios.edad" id="edad" name="edad" required maxlength="2" placeholder="Edad">
 
                 </div>
 
@@ -142,3 +149,5 @@
         </div>
     </div>
 </div>
+
+<app-contact></app-contact>
